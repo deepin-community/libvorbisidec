@@ -1,0 +1,3 @@
+Tests: libvorbisidec-dev
+Restrictions: allow-stderr, superficial
+Depends: build-essential, libvorbisidec-dev, pkg-config, sound-theme-freedesktop

@@ -1,0 +1,172 @@
+libvorbisidec (1.2.1+git20180316-7) unstable; urgency=medium
+
+  * Team upload
+
+  [ Raphaël Halimi ]
+  * Add Multi-Arch: same (Closes: #971744)
+
+  [ Sebastian Ramacher ]
+  * debian/control:
+    - Also mark libvorbisidec-dev as MA: same
+    - Set RRR: no
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 06 Oct 2020 22:17:13 +0200
+
+libvorbisidec (1.2.1+git20180316-6) unstable; urgency=medium
+
+  * Team upload
+  *  debian/patches: Only enable ARM assembler on armel (second try)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 12 Sep 2020 21:46:02 +0200
+
+libvorbisidec (1.2.1+git20180316-5) unstable; urgency=medium
+
+  * Team upload
+  * debian/: Bump debhelper compat to 13
+  * debian/patches: Only enable ARM assembler on armel
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 12 Sep 2020 17:49:06 +0200
+
+libvorbisidec (1.2.1+git20180316-4) unstable; urgency=medium
+
+  * Team upload
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat
+
+  [ Simon McVittie ]
+  * Add a superficial compile/link/execute autopkgtest
+  * Install in multiarch lib directories
+  * Rely on dh_autoreconf to run autoreconf
+
+  [ Sebastian Ramacher ]
+  * debian/control:
+    - Bump Standards-Version
+    - Reduce Build-Depends to what's needed
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 23 Aug 2020 17:31:36 +0200
+
+libvorbisidec (1.2.1+git20180316-3) unstable; urgency=medium
+
+  * Team upload
+
+  [ Ondřej Nový ]
+  * d/rules: Remove trailing whitespaces
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Florian Schlichting ]
+  * Set Maintainer address to Debian Multimedia Maintainers (closes: #899907)
+  * Install pkgconfig file (closes: #695894)
+  * Use secure URIs for xiph.org
+  * Update d/copyright to copyright-format 1.0
+  * Bump dh compat to level 12
+  * Enable all hardening build flags
+  * Add a doc-base registration for API docs
+  * Add a symbols control file
+  * Declare compliance with Debian Policy 4.3.0
+
+ -- Florian Schlichting <fsfs@debian.org>  Sun, 24 Feb 2019 12:35:04 +0100
+
+libvorbisidec (1.2.1+git20180316-2) unstable; urgency=medium
+
+  * Add d/gbp.conf file to enforce the use of pristine-tar.
+  * Adopt package into the Debian Xiph.org Maintainers group (Closes: #698378).
+  * Change debhelper compat level from 7 to 10.
+  * Changed Standards-Version from 3.8.3 to 4.1.3.
+  * Changed package priority from extra to optional.
+  * Switch to source format 3.0 (quilt).
+  * Fix FTCBFS: Pass --build and --host to ./autogen.sh. (Closes: #847463)
+
+ -- Petter Reinholdtsen <pere@debian.org>  Fri, 06 Apr 2018 16:07:41 +0200
+
+libvorbisidec (1.2.1+git20180316-1) unstable; urgency=high
+
+  * QA upload.
+  * Update from upstream git.
+  * Includes fix for CVE-2018-5147 (closes: #893132).
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 16 Mar 2018 21:00:36 +0100
+
+libvorbisidec (1.0.2+svn18153-1) unstable; urgency=medium
+
+  * QA upload.
+  * Set maintainer to Debian QA Group. (see #698378)
+  * Add libogg-dev dependency to libvorbisidec-dev.
+    (Closes: #739864)
+
+ -- Adrian Bunk <bunk@debian.org>  Mon, 23 Jan 2017 22:57:11 +0200
+
+libvorbisidec (1.0.2+svn18153-0.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add pkg-config to Build-Depends.
+
+ -- Luk Claes <luk@debian.org>  Mon, 25 Jun 2012 22:14:45 +0200
+
+libvorbisidec (1.0.2+svn18153-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload by the Security Team.
+  * New upstream version to fix security issues.
+    * CVE-2008-1419: correctly handle codebook.dim==0 case
+    * CVE-2008-1423: check for absurdly huge codebooks
+    * CVE-2008-2009: sanity check for underpopulated Huffman trees
+    * CVE-2009-3379: multiple vulnerabilities MFSA 2009-63
+    * CVE-2012-0444: fix decoding memory corruption
+    Closes: #669196
+  * Add libogg-dev dependency to avoid FTBFS.
+  * Don't ship .la file.
+
+ -- Luk Claes <luk@debian.org>  Sat, 23 Jun 2012 16:51:00 +0200
+
+libvorbisidec (1.0.2+svn16259-2) unstable; urgency=low
+
+  * updated ivorbisfile_example.c to ensure proper alignment of pcm data
+    on short boundaries (affects any arch where char arrays can be placed
+    on misaligned boundaries, such as armel).
+    (Closes: #548815)
+
+ -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>  Mon, 28 Sep 2009 16:01:06 -0400
+
+libvorbisidec (1.0.2+svn16259-1) unstable; urgency=low
+
+  * pulled new changes from upstream SVN.
+  * switched from Vcs-Svn to Vcs-Git
+  * bumped policy to 3.8.3 (no changes needed)
+  * revised debian/copyright to meet latest machine-readable form
+  * moved to my more-generic get-orig-source to pull new upstream versions
+    from svn.
+  * removed Dm-Upload-Allowed, no longer needed
+  * added debian/clean to ensure "build twice" cleanliness.
+  * added iseeking_example.c to example source.
+
+ -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>  Tue, 22 Sep 2009 13:39:34 -0400
+
+libvorbisidec (1.0.2+svn15687-1) unstable; urgency=low
+
+  * New upsteam version (minor header cleanup, does not break ABI or API)
+  * updated my e-mail address.
+  * debian/control: switched XS-Dm-Upload-Allowed to Dm-Upload-Allowed.
+  * switched to debhelper >= 7.0.50, minimized debian/rules
+  * debian/rules added get-orig-source target to build new "upstream
+    tarballs" from upstream SVN.
+  * bumped policy to 3.8.1 (no changes needed)
+
+ -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>  Wed, 01 Apr 2009 13:10:24 -0400
+
+libvorbisidec (1.0.2+svn14261-1) unstable; urgency=low
+
+  * New upstream version.
+  * fixes double-free bug (Closes: #453745)
+  * added Homepage, Vcs-Svn, and Vcs-Browser fields to debian/control.
+  * added XS-Dm-Upload-Allowed: yes to debian/control.
+
+ -- Daniel Kahn Gillmor <dkg-debian.org@fifthhorseman.net>  Sun, 02 Dec 2007 02:19:38 -0500
+
+libvorbisidec (1.0.2+svn12153-1) unstable; urgency=low
+
+  * shipping ivorbisfile_example.c and a simple makefile in examples for
+    libvorbisidec-dev
+  * created BSD debian packaging license to BSD.
+  * Initial release (Closes #167464).
+
+ -- Daniel Kahn Gillmor <dkg-debian.org@fifthhorseman.net>  Wed, 29 Nov 2006 00:27:16 -0500

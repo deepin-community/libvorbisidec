@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+# fetch a new version of the upstream source, if anything has changed
+# in our directory since the last clean upload.
+get-orig-source:
+	debian/get-orig-source https://svn.xiph.org/trunk/Tremor libvorbisidec 1.0.2
